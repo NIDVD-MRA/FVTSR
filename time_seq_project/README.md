@@ -31,14 +31,14 @@ pip install -r requirements.txt
 ```
 3. Dataset Download
    
-    数据集下载链接：[百度网盘](https://pan.baidu.com/s/1rZEyD3OLYlxqDfw9FnRrxQ) 提取码：y9xg ，[GoogleDrive](https://drive.google.com/file/d/1bnaY8Vz2GuSpE5JRCIA7iArd6esuFsBu/view?usp=drive_link),下载的zip文件解压至./time_seq_project_5_10/dataset/。
+    dataset download address：[百度网盘](https://pan.baidu.com/s/1rZEyD3OLYlxqDfw9FnRrxQ) code：y9xg ，[GoogleDrive](https://drive.google.com/file/d/1bnaY8Vz2GuSpE5JRCIA7iArd6esuFsBu/view?usp=drive_link),unzip file dataset.zip to ./time_seq_project_5_10/。
 4. Train command:
 ```Python
-python time_seq_project_5_10/general_train.py  #确定文件路径后执行
+python time_seq_project_5_10/general_train.py  #after confirming file path
 ```
 5. Test command:
 ```python
-python time_seq_project_5_10/temp_test.py      #确定文件路径后执行
+python time_seq_project_5_10/temp_test.py      #after confirming file path
 ```
 
 
