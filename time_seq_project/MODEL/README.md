@@ -14,8 +14,6 @@ MODEL
 
 ├─lstm
 
-│      model_checkpoint_bilstm_best.pth
-
 │
 
-└─transformer      //未完成，后续优化
+└─     model_checkpoint_bilstm_best.pth

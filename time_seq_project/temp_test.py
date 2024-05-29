@@ -38,18 +38,18 @@ class BiGRUModel(nn.Module):
 
 
 # 选择模型
-model_type = 'BiLSTM'  # 可选 'BiLSTM', 'BiGRU'
+model_type = 'bilstm'  # 可选 'bilstm', 'bigru'
 input_size = 45  # 输入特征维度
 hidden_size = 128  # 隐藏层大小
 output_size = 2  # 输出特征维度
 
-if model_type == 'BiLSTM':
+if model_type == 'bilstm':
     model = BiLSTMModel(input_size, hidden_size, output_size).to(device)
-elif model_type == 'BiGRU':
+elif model_type == 'bigru':
     model = BiGRUModel(input_size, hidden_size, output_size).to(device)
 
 # 加载模型检查点
-checkpoint = torch.load('model_checkpoint_bilstm_best.pth')
+checkpoint = torch.load('./time_seq_project/MODEL/{model_type}/model_checkpoint_{model_type}_best.pth')
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
 

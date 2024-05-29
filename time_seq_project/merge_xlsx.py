@@ -68,5 +68,5 @@ def merge_excel_files(file_paths, output_file_path):
     print(f'Merged file saved to {output_file_path}')
 
 # 指定输出文件路径
-output_file_path = './time_seq_project_5_10/dataset/data/combined5.xlsx'
+output_file_path = './time_seq_project_5_10/dataset/data/test_all.xlsx'
 merge_excel_files(file_paths, output_file_path)
