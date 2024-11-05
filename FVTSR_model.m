@@ -5,7 +5,6 @@ P_overall = xlsread('E:\***.xlsx',sheet *,'E2:AY63');
 x = 1:47;
 
 s_column = size(P_overall,1);
-%s_row = size(P_overall,2);
 
 
 v = [];
@@ -87,7 +86,7 @@ for s_size = 1:s_column;
     
     % Iterate over the difference vectors to find extreme values
     for i = 3:length(d_Dynamic_P_normalisation)-1
-       % Judgement: the first-order difference of the normalised P first-order differential is at the (i-1)th > 0 && 
+       % Judgement, the first-order difference of the normalised P first-order differential is at the (i-1)th > 0 && 
        % The first-order difference of the normalised P first-order differential at i > 0 &&
        % The first-order difference of the normalised P first-order differential at the i+1st < 0 &&
        % Whether i+1 is the maximum value of the normalised P first order differentiation && 
@@ -105,7 +104,6 @@ for s_size = 1:s_column;
     end
     
     if countMax == 1;
-%        disp('positive');
          else
          countMax = 0;
          v(s_size,1) = countMax;
@@ -156,7 +154,7 @@ for s_size = 1:s_column;
             end
      end                                        
     
-     %Gain midpoint corresponds to x-value (right)
+     % Gain midpoint corresponds to x-value (right)
      Gain_midpoint_right =  Gain_midpoint_left +1;
      
      % A gain midpoint greater than or equal to 44 is considered negative.
@@ -173,7 +171,6 @@ for s_size = 1:s_column;
     cs_y_1 = P2(Gain_midpoint_left-1:Gain_midpoint_right+1);
     cs_coefficient1 = polyfit(cs_x_1,cs_y_1,1);
     cs_x_11 = (Gain_midpoint_right-40:1:Gain_midpoint_right+30);                               %Range of values after fitting the function (x-values)
-    % cs_x_11 = [cs_jz_z-4;cs_jz_z-3;cs_jz_z-2;cs_jz_z-1;cs_jz_z;cs_jz_y;cs_jz_y+1];     
     cs_y_11 = cs_coefficient1(1)*cs_x_11 + cs_coefficient1(2);                                % After fitting the function, take the value of the range of the fitted value to find
     
     cs_45 = cs_y_11(45);                                                                % After fitting the function, the 45-loop fit values are derived
