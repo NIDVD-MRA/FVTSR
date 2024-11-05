@@ -3,7 +3,7 @@ One of the main objectives of the code is to establish a relationship between fl
 Improve the accuracy of nucleic acid test results for different samples and conditions by incorporating personalised parameters.
 The ability to be universally applicable, robust and reliable under different testing conditions (e.g., different reagents, equipment, environment, etc.) has been considered.
 # Data import
-```P_overall = xlsread('E:\***.xlsx',sheet *,'E2:AY63');```
+```P_overall = xlsread('E:\***.xlsx',sheet *,'E2:AY63');
 Multiple sets of fluorescence data can be entered and calculated at the same time.
 Each set of data is arranged in rowsz.
 Bits 1 and 2 are the start and end points of the background value calculated by ‘time_seq_projuect’.
