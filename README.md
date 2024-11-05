@@ -10,5 +10,5 @@ Bits 1 and 2 are the start and end points of the background value calculated by 
 Bits 3 to 47 are the input test data.
 # Algorithmic result
 The result of the calculation is displayed in the ‘v’ variable.
-The results consist of 2 parts, with the results of the calculations for each set of data presented in rows. The first column is the negative and positive results, with negative being 0 and positive being 1。
-The second column is the results of the key point calculations, representing the number of loops
+The results consist of 2 parts, with the results of the calculations for each set of data presented in rows. The first column is the negative and positive results, with negative being 0 and positive being 1.
+The second column is the results of the key point calculations, representing the number of loops.
