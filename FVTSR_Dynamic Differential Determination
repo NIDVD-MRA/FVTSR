@@ -33,7 +33,7 @@ for s_size = 1:s_column;
     plot(P_smooth);
     
     %%
-    %归一化
+    %normalisation
     P_min = min(P_smooth);
     P_decrease = P_smooth - P_min;
     P_max = max(P_decrease);
