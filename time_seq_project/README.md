@@ -1,70 +1,169 @@
-# Time_Seqence_Model
-
-<!-- ABOUT THE PROJECT -->
+# Time Sequence Model
 
 ## About The Project
 
-A  time series model based on BILSTM and BIGRU is designed, which is directed to optimize the data set of this project. The code of this repository includes model construction, training, verification process and some file processing.
+This repository contains a time series model based on **BILSTM** and **BIGRU**, designed to optimize the dataset provided in this project. The repository includes code for model construction, training, validation, and various file processing utilities.
+
+### Key Features
+
+- **Model Architecture**: Implements BILSTM and BIGRU for time series prediction.
+- **Data Processing**: Includes scripts for preprocessing, merging, and analyzing datasets.
+- **Evaluation**: Provides tools for validation, Pearson correlation analysis, and slope testing.
+- **Export Utilities**: Converts results to Excel format for easier analysis.
 
 ### Built With
 
-Built Using Languages and Libraries Listed Below
+- [Python](https://docs.python.org/3/)
+- [PyTorch](https://pytorch.org/)
+- [NumPy](https://numpy.org/)
+- [scikit-learn](https://scikit-learn.org/stable/)
 
-* [Python](https://docs.python.org/3/)
-* [Pytorch](https://pytorch.org/)
-* [numpy](https://numpy.org/devdocs/)
-* [sklearn](https://scikit-learn.org/stable/)
-
-<!-- GETTING STARTED -->
+---
 
 ## Getting Started
 
-### Installation
+### Prerequisites
 
-1. Clone the repo
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/NIDVD-MRA/FVTSR.git
+   cd FVTSR/time_seq_project
+   ```
 
-```sh
-git clone https://github.com/NIDVD-MRA/FVTSR.git
+2. **Install Required Packages**:
+   Install the dependencies listed in `requirements.txt`:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. **Download Dataset**:
+   Download the dataset from the following links and extract it to the `dataset/` folder:
+   - [百度网盘](https://pan.baidu.com/s/1rZEyD3OLYlxqDfw9FnRrxQ) (Code: y9xg)
+   - [Google Drive](https://drive.google.com/file/d/1bnaY8Vz2GuSpE5JRCIA7iArd6esuFsBu/view?usp=drive_link)
+
+---
+
+## Dataset Structure
+
+The dataset folder contains the following files and subdirectories:
+
+```
+dataset/
+│  README.md
+│  test1.xlsx, test2.xlsx, ..., test5.xlsx  # Five test sets
+│  test_all.xlsx                            # Cross-validation test set
+│  test_all_predict.xlsx                    # Prediction results
+│  train_set.xlsx                           # Cross-validation training set
+│  train_set_predict.xlsx                   # Prediction results
+│
+├─data/                                     # Five categories of data
+│      1.xlsx, 2.xlsx, ..., 5.xlsx
+│
+├─data2/                                    # Additional data
+│      1.xlsx, 2.xlsx, ..., 5.xlsx
 ```
 
-2. Install Python packages
+---
 
-```sh
-pip install -r requirements.txt
+## Model Structure
+
+The `MODEL/` folder contains pre-trained model checkpoints for BILSTM and BIGRU:
+
+```
+MODEL/
+│  README.md
+│
+├─bigru/
+│      model_checkpoint_bigru_best.pth
+│
+├─bilstm/
+│      model_checkpoint_bilstm_best.pth
 ```
 
-3. Dataset Download
+---
 
-   dataset download address：[百度网盘](https://pan.baidu.com/s/1rZEyD3OLYlxqDfw9FnRrxQ) code：y9xg ，[GoogleDrive](https://drive.google.com/file/d/1bnaY8Vz2GuSpE5JRCIA7iArd6esuFsBu/view?usp=drive_link),unzip file dataset.zip to ./time_seq_project_5_10/。
-4. Train command:
+## Usage
 
-```Python
-python time_seq_project_5_10/general_train.py  #after confirming file path
-```
+### Commands
 
-5. Test command:
+1. **Training**:
+   ```sh
+   python general_train.py
+   ```
 
-```python
-python time_seq_project_5_10/temp_test.py      #after confirming file path
-```
+2. **Testing**:
+   ```sh
+   python temp_test.py
+   ```
 
-6. Slope Test command:
+3. **Validation**:
+   - **Cross-validation**:
+     ```sh
+     python k_val.py
+     ```
+   - **Liner Test**:
+     ```sh
+     python liner_val.py
+     ```
 
-```python
-python time_seq_project_5_10/k_val.py      #after confirming file path
-```
-7. Pearson Test command:
+4. **Analysis**:
+   - **Pearson Correlation**:
+     ```sh
+     python pearson.py
+     ```
+   - **Visualization**:
+     ```sh
+     python pit.py
+     ```
 
-```python
-python time_seq_project_5_10/pearson.py      #after confirming file path
-```
-8. Liner Test command:
+5. **Export Results**:
+   ```sh
+   python result_to_excel.py
+   ```
 
-```python
-python time_seq_project_5_10/liner_val.py      #after confirming file path
-```
-9. Picture command:
+---
 
-```python
-python time_seq_project_5_10/pit.py      #after confirming file path
-```
+## File Descriptions
+
+### Core Scripts
+
+- **`general_train.py`**: Main script for training the model.
+- **`general_val.py`**: Script for general validation.
+- **`liner_val.py`**: Performs linear validation and logs results.
+- **`pearson.py`**: Calculates Pearson correlation coefficients.
+- **`pit.py`**: Generates visualizations for analysis.
+- **`merge_xlsx.py`**: Merges multiple Excel files into one.
+- **`result_to_excel.py`**: Converts results into Excel format.
+
+### Utilities
+
+- **`Data preprocessing.py`**: Prepares the dataset for training and testing.
+- **`toexcel.py`**: Utility for exporting data to Excel.
+- **`temp_test.py`**: Temporary testing script for debugging purposes.
+
+---
+
+## Results
+
+The results of the model predictions and validations are saved in the following formats:
+
+- **Processed Files**: Saved in the same directory as the input files with modified names.
+- **Logs**: Linear validation logs are saved as `_liner_log.txt` files.
+
+---
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements, please fork the repository and submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## Acknowledgments
+
+Special thanks to the contributors and the open-source community for their support.
